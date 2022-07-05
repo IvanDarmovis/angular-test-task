@@ -1,0 +1,64 @@
+<div class="container">
+  <form class="form-part">
+    <select (change)="changeCoin($any($event.target).value, 'left')">
+      <option value="eur">EUR</option>
+      <option value="usd">USD</option>
+      <option value="uah" selected>UAH</option>
+    </select>
+    <label>
+      Сума
+      <input
+        *ngIf="coinLeft === 'eur'"
+        type="number"
+        (input)="changeAmount($any($event.target).value, 'left')"
+        [(ngModel)]="data.eur"
+        name="eur"
+      />
+      <input
+        *ngIf="coinLeft === 'uah'"
+        type="number"
+        (input)="changeAmount($any($event.target).value, 'left')"
+        [(ngModel)]="data.uah"
+        name="uah"
+      />
+      <input
+        *ngIf="coinLeft === 'usd'"
+        type="number"
+        (input)="changeAmount($any($event.target).value, 'left')"
+        [(ngModel)]="data.usd"
+        name="usd"
+      />
+    </label>
+  </form>
+  <form class="form-part">
+    <select (change)="changeCoin($any($event.target).value, 'right')">
+      <option value="eur" selected>EUR</option>
+      <option value="usd">USD</option>
+      <option value="uah">UAH</option>
+    </select>
+    <label>
+      Сума
+      <input
+        *ngIf="coinRight === 'eur'"
+        type="number"
+        (input)="changeAmount($any($event.target).value, 'right')"
+        [(ngModel)]="data.eur"
+        name="eur"
+      />
+      <input
+        *ngIf="coinRight === 'uah'"
+        type="number"
+        (input)="changeAmount($any($event.target).value, 'right')"
+        [(ngModel)]="data.uah"
+        name="uah"
+      />
+      <input
+        *ngIf="coinRight === 'usd'"
+        type="number"
+        (input)="changeAmount($any($event.target).value, 'right')"
+        [(ngModel)]="data.usd"
+        name="usd"
+      />
+    </label>
+  </form>
+</div>
