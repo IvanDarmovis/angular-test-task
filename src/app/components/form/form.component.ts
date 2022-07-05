@@ -34,15 +34,12 @@ export class FormComponent implements OnInit {
   constructor(private exchange: Api) {}
 
   ngOnInit(): void {
-    this.exchangeData();
-  }
-
-  private async exchangeData() {
     this.exchange.response().subscribe((data: any) => (this.course = data));
-    console.log(this.course);
   }
 
   changeCoin(coin: string, side: string) {
+    console.log(this.course);
+
     if (side === 'right') this.coinRight = coin;
     else this.coinLeft = coin;
   }
