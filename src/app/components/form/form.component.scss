@@ -3,6 +3,12 @@
   justify-content: center;
 
   margin-top: 50px;
+
+  width: 500px;
+  margin: 0 auto;
+  padding: 100px;
+  background-color: #0806;
+  border-radius: 100px;
 }
 
 .form-part:not(:last-child) {
@@ -15,10 +21,11 @@
   align-items: center;
 }
 
-select {
-  margin-bottom: 30px;
+.form-select {
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
-
 input {
   display: block;
   margin-top: 10px;
